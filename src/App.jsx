@@ -1,15 +1,18 @@
-
+import { Routes } from "react-router-dom"
+import Footer from "./component/Footer"
+import NavBar from "./component/NavBar"
+import Home from "./pages/Home"
 
 function App() {
-
-
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">
-        App
-      </h1>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+      <Footer />
     </div>
-  )
+  );
 }
 
 export default App
