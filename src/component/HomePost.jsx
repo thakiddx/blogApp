@@ -1,7 +1,19 @@
 
 const HomePosts = () => {
     return (
-        <div>HomePosts</div>
+        <div className="w-full flex mt-8 space-x-4"> 
+            {/* left */}
+            <div>
+
+            </div>
+            {/* right */}
+            <div>
+
+            </div>
+            
+
+
+        </div>
     )
 }
 
