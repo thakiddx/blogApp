@@ -1,8 +1,10 @@
+import HomePosts from "../component/HomePost"
+
 
 const Home = () => {
     return (
      <div>
-        Home
+       <HomePosts />
      </div>
     )
 }
