@@ -9,7 +9,7 @@ const NavBar = () => {
         </div>
         <div className='flex items-center justify-center space-x-2 md:space-x-4'></div>
         <h3><Link to='/login'>Login</Link></h3>
-        <h3><link to='/register'>Register</link></h3>
+        <h3><Link to='/register'>Register</Link></h3>
 
             
         </div>
