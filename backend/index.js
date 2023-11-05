@@ -1,16 +1,22 @@
 const express = require('express');
 const app = express();
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 
 //database
 const connectDB = async() => {
     try{
-        await mongoose.connnect('mongodb+srv://thakiddx:0920Sonics@cluster2.bmuid82.mongodb.net/blog?retryWrites=true&w=majority')
+        await mongoose.connect(process.env.MONGO_URL)
+        console.log('MongoDB connected')
     }
     catch(err){
         console.log(err)
     }
 }
 
-app.listen(5000, () => {
-    console.log('Server is running on port 5000.');
+dotenv.config();
+
+app.listen(process.env.PORT, () => {
+    connectDB()
+    console.log('Server is running on port '+process.env.PORT);
 });
