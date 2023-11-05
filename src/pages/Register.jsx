@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import Footer from "../component/Footer"
 
 const Register = () => {
   return (
@@ -20,6 +21,7 @@ const Register = () => {
                 </div>
             </div>
         </div>
+        <Footer/>
     </>
   )
 }
