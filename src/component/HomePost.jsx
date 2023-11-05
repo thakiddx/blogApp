@@ -5,8 +5,6 @@ const HomePosts = () => {
             {/* left */}
             <div className="w-[35%] h-[200px] flex justify-center items-center">
             <img src="https://images.unsplash.com/photo-1589395937920-07cce323acba?auto=format&fit=crop&q=80&w=812&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" className="h-full w-full object cover" />
-
-
             </div>
             {/* right */}
             <div className="flex flex-col w-[65%]">
