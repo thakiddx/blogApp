@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const authRoute = require('./routes/auth');
 
 //database
 const connectDB = async() => {
@@ -14,7 +15,11 @@ const connectDB = async() => {
     }
 }
 
+//middleware
+
+
 dotenv.config();
+app.use("/api/auth,",authRoute);
 
 app.listen(process.env.PORT, () => {
     connectDB()
