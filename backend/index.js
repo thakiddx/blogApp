@@ -22,7 +22,7 @@ const connectDB = async() => {
 dotenv.config();
 app.use(express.json());
 app.use("/api/auth",authRoute);
-app.use("/api/users",userRoute);
+app.use("/api/auth/users",userRoute);
 
 
 app.listen(process.env.PORT, () => {
