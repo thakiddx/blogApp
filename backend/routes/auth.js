@@ -37,7 +37,7 @@ router.post('/login', async(req,res) => {
         }
         const token = jwt.sign({id:user._id},process.env.SECRET,{expiresIn:'3d'});
         const {password,...info} = user._doc;
-       res.cookie("jwtToken",token,).status(200).json(info)
+       res.cookie("token",token,).status(200).json(info)
     }
     catch(err){
         res.status(500).json(err)
@@ -48,5 +48,13 @@ router.post('/login', async(req,res) => {
 
 
 //logout
+router.get('/logout', async(req,res) => {
+    try{
+        res.clearCookie("token",{sameSite:'none',secure:true}).status(200).json('logged out')
+    }
+    catch(err){
+        res.status(500).json(err)
+    }
+});
 
 module.exports = router;
