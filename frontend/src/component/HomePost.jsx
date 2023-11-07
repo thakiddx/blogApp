@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import {IF} from '../url'
+import {IF} from '/home/xmalone0920/blogApp/frontend/url.js'
 
 
 const HomePosts = ({post}) => {
