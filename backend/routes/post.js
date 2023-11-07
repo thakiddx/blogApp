@@ -6,65 +6,67 @@ const Post = require('../models/Post')
 const Comment = require('../models/Comment')
 const verifyToken = require('../verifyToken')
 
-//Create
+//CREATE
 router.post("/create",verifyToken,async (req,res)=>{
     try{
-        const newPost = new Post(req.body)
-        const savedPost = await newPost.save()
+        const newPost=new Post(req.body)
+        // console.log(req.body)
+        const savedPost=await newPost.save()
+        
         res.status(200).json(savedPost)
-
-    }catch(err){
+    }
+    catch(err){
+        
         res.status(500).json(err)
     }
-
+     
 })
 
-
-//Update 
+//UPDATE
 router.put("/:id",verifyToken,async (req,res)=>{
     try{
+       
+        const updatedPost=await Post.findByIdAndUpdate(req.params.id,{$set:req.body},{new:true})
+        res.status(200).json(updatedPost)
 
-        const updatedUser = await Post.findByIdAndUpdate(req.params.id,{$set:req.body},{new:true})
-        res.status(200).json(updatedUser)
-
-        }
+    }
     catch(err){
         res.status(500).json(err)
     }
 })
 
-//Delete
+
+//DELETE
 router.delete("/:id",verifyToken,async (req,res)=>{
     try{
         await Post.findByIdAndDelete(req.params.id)
         await Comment.deleteMany({postId:req.params.id})
         res.status(200).json("Post has been deleted!")
 
-        }
+    }
     catch(err){
         res.status(500).json(err)
     }
 })
 
 
-//Get Post Details
+//GET POST DETAILS
 router.get("/:id",async (req,res)=>{
     try{
-       const post = await Post.findById(req.params.id)
-       res.status(200).json(post)
-
-        }
+        const post=await Post.findById(req.params.id)
+        res.status(200).json(post)
+    }
     catch(err){
         res.status(500).json(err)
     }
 })
 
-//Get Post
+//GET POSTS
 router.get("/",async (req,res)=>{
-    const query = req.query.new
-
+    const query=req.query
+    
     try{
-        const searchFilter = {
+        const searchFilter={
             title:{$regex:query.search, $options:"i"}
         }
         const posts=await Post.find(query.search?searchFilter:null)
@@ -78,7 +80,7 @@ router.get("/",async (req,res)=>{
 //GET USER POSTS
 router.get("/user/:userId",async (req,res)=>{
     try{
-        const posts = await Post.find({userId:req.params.userId})
+        const posts=await Post.find({userId:req.params.userId})
         res.status(200).json(posts)
     }
     catch(err){
@@ -88,4 +90,4 @@ router.get("/user/:userId",async (req,res)=>{
 
 
 
-module.exports = router
+module.exports=router
