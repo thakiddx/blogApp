@@ -3,6 +3,8 @@ import { BsSearch } from "react-icons/bs"
 import { FaBars } from "react-icons/fa"
 import { useState,useContext } from "react"
 import { UserContext } from "../context/UserContext"
+import { useNavigate } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 import Menu from "./Menu"
 
 const Navbar = () => {
