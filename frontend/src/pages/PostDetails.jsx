@@ -1,11 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom"
 import Comment from "../component/Comment"
-import Footer from "../component/Footer"
-import Navbar from "/home/xmalone0920/blogApp/frontend/src/component/NavBar.jsx"
 import {BiEdit} from 'react-icons/bi'
 import {MdDelete} from 'react-icons/md'
 import axios from "axios"
-import { URL,IF } from "/home/xmalone0920/blogApp/frontend/url.js"
 import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../context/UserContext"
 import Loader from "../component/Loader"
@@ -93,7 +90,7 @@ const PostDetails = () => {
   
   return (
     <div>
-        <Navbar/>
+
         {loader?<div className="h-[80vh] flex justify-center items-center w-full"><Loader/></div>:<div className="px-8 md:px-[200px] mt-8">
         <div className="flex justify-between items-center">
          <h1 className="text-2xl font-bold text-black md:text-3xl">{post.title}</h1>
@@ -109,7 +106,7 @@ const PostDetails = () => {
        <p>{new Date(post.updatedAt).toString().slice(16,24)}</p>
        </div>
         </div>
-        <img src={IF+post.photo} className="w-full  mx-auto mt-8" alt=""/>
+        <img src={post.photo} className="w-full  mx-auto mt-8" alt=""/>
          <p className="mx-auto mt-8">{post.desc}</p>
          <div className="flex items-center mt-8 space-x-4 font-semibold">
           <p>Categories:</p>
@@ -136,7 +133,7 @@ const PostDetails = () => {
           <button onClick={postComment} className="bg-black text-sm text-white px-2 py-2 md:w-[20%] mt-4 md:mt-0">Add Comment</button>
          </div>
         </div>}
-        <Footer/>
+
     </div>
   )
 }

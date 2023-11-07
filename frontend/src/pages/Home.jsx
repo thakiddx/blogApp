@@ -1,7 +1,5 @@
 import axios from "axios"
-import Footer from "../component/Footer"
 import HomePosts from "../component/HomePost"
-import Navbar from "/home/xmalone0920/blogApp/frontend/src/component/NavBar.jsx"
 //import { IF, url } from "/home/xmalone0920/blogApp/frontend/url.js"
 import { useEffect, useContext, useState } from "react"
 import { Link, useLocation } from "react-router-dom"
@@ -22,7 +20,7 @@ const Home = () => {
   const fetchPosts=async()=>{
     setLoader(true)
     try{
-      const res=await axios.get(URL+"/api/posts/"+search)
+      const res=await axios("/api/posts/")
       // console.log(res.data)
       setPosts(res.data)
       if(res.data.length===0){
@@ -50,7 +48,6 @@ const Home = () => {
   return (
     
     <>
-    <Navbar/>
 <div className="px-8 md:px-[200px] min-h-[80vh]">
         {loader?<div className="h-[40vh] flex justify-center items-center"><Loader/></div>:!noResults?
         posts.map((post)=>(
@@ -62,7 +59,7 @@ const Home = () => {
           
         )):<h3 className="text-center font-bold mt-16">No posts available</h3>}
     </div>
-    <Footer/>
+
     </>
     
   )

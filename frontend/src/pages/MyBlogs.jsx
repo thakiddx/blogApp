@@ -1,11 +1,7 @@
 import { Link, useLocation } from "react-router-dom"
-import Footer from "../component/Footer"
-import Navbar from "/home/xmalone0920/blogApp/frontend/src/component/NavBar.jsx"
 import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../context/UserContext"
 import axios from "axios"
-import { URL } from "/home/xmalone0920/blogApp/frontend/url.js"
-import HomePosts from "/home/xmalone0920/blogApp/frontend/src/component/HomePost.jsx"
 import Loader from "../component/Loader"
 
 
@@ -46,7 +42,7 @@ useEffect(()=>{
 
 return (
   <div>
-      <Navbar/>
+ 
       <div className="px-8 md:px-[200px] min-h-[80vh]">
       {loader?<div className="h-[40vh] flex justify-center items-center"><Loader/></div>:!noResults?
       posts.map((post)=>(
@@ -58,7 +54,7 @@ return (
         
       )):<h3 className="text-center font-bold mt-16">No posts available</h3>}
       </div>
-      <Footer/>
+
   </div>
 )
 }

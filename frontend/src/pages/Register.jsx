@@ -1,8 +1,7 @@
 import { Link, useNavigate } from "react-router-dom"
-import Footer from "../component/Footer"
+
 import { useState } from "react"
 import axios from 'axios'
-import {URL} from '/home/xmalone0920/blogApp/frontend/url.js'
 
 
 const Register = () => {
@@ -53,7 +52,7 @@ const Register = () => {
          </div>
        </div>
     </div>
-    <Footer/>
+
     </>
     
   )

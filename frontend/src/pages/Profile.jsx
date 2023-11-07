@@ -1,9 +1,6 @@
 import { useContext, useEffect, useState } from "react"
-import Footer from "../component/Footer"
-import Navbar from "/home/xmalone0920/blogApp/frontend/src/component/NavBar.jsx"
 import ProfilePosts from "../component/ProfilePosts"
 import axios from "axios"
-import { IF, URL } from "/home/xmalone0920/blogApp/frontend/url.js"
 import { UserContext } from "../context/UserContext"
 import { useNavigate, useParams } from "react-router-dom"
 
@@ -84,7 +81,7 @@ useEffect(()=>{
 
   return (
     <div>
-      <Navbar/>
+
       <div className="min-h-[80vh] px-8 md:px-[200px] mt-8 flex md:flex-row flex-col-reverse md:items-start items-start">
         <div className="flex flex-col md:w-[70%] w-full mt-8 md:mt-0">
           <h1 className="text-xl font-bold mb-4">Your posts:</h1>
@@ -107,7 +104,6 @@ useEffect(()=>{
           
         </div>
       </div>
-      <Footer/>
     </div>
   )
 }

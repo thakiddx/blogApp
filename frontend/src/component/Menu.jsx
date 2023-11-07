@@ -1,7 +1,6 @@
 import { useContext } from "react"
 import { UserContext } from "../context/UserContext"
 import axios from "axios"
-import { URL } from "/home/xmalone0920/blogApp/frontend/url.js"
 import { Link, useNavigate } from "react-router-dom"
 
 

@@ -33,11 +33,11 @@ const Navbar = () => {
       
       </div>}
       <div className="hidden md:flex items-center justify-center space-x-2 md:space-x-4">
-        {user? <h3><Link to="/write">Write</Link></h3> :<h3><Link to="/login">Login</Link></h3>}
-        {user? <div onClick={showMenu}>
+         <h3><Link to="/write">Write</Link></h3> <h3><Link to="/login">Login</Link></h3>
+        <div onClick={showMenu}>
           <p className="cursor-pointer relative"><FaBars/></p>
           {menu && <Menu/>}
-        </div>:<h3><Link to="/register">Register</Link></h3>}
+        </div><h3><Link to="/register">Register</Link></h3>
       </div>
       <div onClick={showMenu} className="md:hidden text-lg">
         <p className="cursor-pointer relative"><FaBars/></p>

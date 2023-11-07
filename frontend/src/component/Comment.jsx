@@ -1,7 +1,6 @@
 import axios from "axios"
 import { BiEdit } from "react-icons/bi"
 import { MdDelete } from "react-icons/md"
-import { URL } from "/home/xmalone0920/blogApp/frontend/url.js"
 import { useContext } from "react"
 import { UserContext } from "../context/UserContext"
 
