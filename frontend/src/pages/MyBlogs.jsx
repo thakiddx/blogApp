@@ -1,11 +1,12 @@
 import { Link, useLocation } from "react-router-dom"
-import Footer from "../component/Footer"
-import Navbar from "/home/xmalone0920/blogApp/frontend/src/component/NavBar.jsx"
 import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../context/UserContext"
 import axios from "axios"
+<<<<<<< HEAD
 import { URL } from "../url.js"
 import HomePosts from "/home/xmalone0920/blogApp/frontend/src/component/HomePost.jsx"
+=======
+>>>>>>> d45bd292e363bb9b9eab75d4561e3b96efea8214
 import Loader from "../component/Loader"
 
 
@@ -21,7 +22,7 @@ const {user}=useContext(UserContext)
 const fetchPosts=async()=>{
   setLoader(true)
   try{
-    const res=await axios.get(URL+"/api/posts/user/"+user._id)
+    const res=await axios.get("/api/posts/user/"+user._id)
     // console.log(res.data)
     setPosts(res.data)
     if(res.data.length===0){
@@ -46,7 +47,7 @@ useEffect(()=>{
 
 return (
   <div>
-      <Navbar/>
+ 
       <div className="px-8 md:px-[200px] min-h-[80vh]">
       {loader?<div className="h-[40vh] flex justify-center items-center"><Loader/></div>:!noResults?
       posts.map((post)=>(
@@ -58,7 +59,7 @@ return (
         
       )):<h3 className="text-center font-bold mt-16">No posts available</h3>}
       </div>
-      <Footer/>
+
   </div>
 )
 }

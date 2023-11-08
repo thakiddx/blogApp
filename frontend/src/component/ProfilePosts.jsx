@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 //* eslint-disable react/prop-types */
 import { IF } from "/home/xmalone0920/blogApp/frontend/src/url.js"
 
+=======
+/* eslint-disable react/prop-types */
+>>>>>>> d45bd292e363bb9b9eab75d4561e3b96efea8214
 const ProfilePosts = ({p}) => {
   // console.log(p)
   return (
