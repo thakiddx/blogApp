@@ -1,12 +1,9 @@
 import { useContext, useEffect, useState } from "react"
-import Navbar from '/home/xmalone0920/blogApp/frontend/src/component/NavBar.jsx'
-import Footer from '../component/Footer'
+import { URL } from "/home/xmalone0920/blogApp/frontend/src/url.js"
 import { ImCross } from 'react-icons/im'
 import axios from "axios"
-import { URL } from "/home/xmalone0920/blogApp/frontend/url.js"
 import { useNavigate, useParams } from "react-router-dom"
 import { UserContext } from "../context/UserContext"
-
 
 const EditPost = () => {
 
@@ -21,7 +18,7 @@ const EditPost = () => {
 
     const fetchPost=async()=>{
       try{
-        const res=await axios.get(URL+"/api/posts/"+postId)
+        const res=await axios.get("/api/posts/"+postId)
         setTitle(res.data.title)
         setDesc(res.data.desc)
         setFile(res.data.photo)
@@ -52,7 +49,7 @@ const EditPost = () => {
         // console.log(data)
         //img upload
         try{
-          const imgUpload=await axios.post(URL+"/api/upload",data)
+          const imgUpload=await axios.post("/api/upload",data)
           // console.log(imgUpload.data)
         }
         catch(err){
@@ -62,7 +59,7 @@ const EditPost = () => {
       //post upload
      
       try{
-        const res=await axios.put(URL+"/api/posts/"+postId,post,{withCredentials:true})
+        const res=await axios.put("/api/posts/"+postId,post,{withCredentials:true})
         navigate("/posts/post/"+res.data._id)
         // console.log(res.data)
 
@@ -92,7 +89,7 @@ const EditPost = () => {
     }
   return (
     <div>
-        <Navbar/>
+
         <div className='px-6 md:px-[200px] mt-8'>
         <h1 className='font-bold md:text-2xl text-xl '>Update a post</h1>
         <form className='w-full flex flex-col space-y-4 md:space-y-8 mt-4'>
@@ -121,7 +118,7 @@ const EditPost = () => {
         </form>
 
         </div>
-        <Footer/>
+
     </div>
   )
 }

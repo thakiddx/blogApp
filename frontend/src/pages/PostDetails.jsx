@@ -5,7 +5,7 @@ import Navbar from "/home/xmalone0920/blogApp/frontend/src/component/NavBar.jsx"
 import {BiEdit} from 'react-icons/bi'
 import {MdDelete} from 'react-icons/md'
 import axios from "axios"
-import { URL,IF } from "/home/xmalone0920/blogApp/frontend/url.js"
+import { URL,IF } from "../url.js"
 import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../context/UserContext"
 import Loader from "../component/Loader"

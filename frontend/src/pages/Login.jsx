@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom"
 import Footer from "../component/Footer"
 import { useContext, useState } from "react"
 import axios from "axios"
-import { URL } from "/home/xmalone0920/blogApp/frontend/url.js"
+import { URL } from "../url.js"
 import { UserContext } from "../context/UserContext"
 
 const Login = () => {

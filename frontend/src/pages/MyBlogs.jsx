@@ -4,7 +4,7 @@ import Navbar from "/home/xmalone0920/blogApp/frontend/src/component/NavBar.jsx"
 import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../context/UserContext"
 import axios from "axios"
-import { URL } from "/home/xmalone0920/blogApp/frontend/url.js"
+import { URL } from "../url.js"
 import HomePosts from "/home/xmalone0920/blogApp/frontend/src/component/HomePost.jsx"
 import Loader from "../component/Loader"
 

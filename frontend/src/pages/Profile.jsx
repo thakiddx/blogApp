@@ -3,7 +3,7 @@ import Footer from "../component/Footer"
 import Navbar from "/home/xmalone0920/blogApp/frontend/src/component/NavBar.jsx"
 import ProfilePosts from "../component/ProfilePosts"
 import axios from "axios"
-import { IF, URL } from "/home/xmalone0920/blogApp/frontend/url.js"
+import { IF, URL } from "../url.js"
 import { UserContext } from "../context/UserContext"
 import { useNavigate, useParams } from "react-router-dom"
 

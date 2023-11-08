@@ -3,7 +3,7 @@ import Footer from '../component/Footer'
 import { ImCross } from 'react-icons/im'
 import { useContext, useState } from 'react'
 import { UserContext } from '../context/UserContext'
-import { URL } from '/home/xmalone0920/blogApp/frontend/url.js'
+import { URL } from '../url.js'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 

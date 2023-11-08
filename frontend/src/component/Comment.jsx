@@ -1,16 +1,18 @@
 import axios from "axios"
 import { BiEdit } from "react-icons/bi"
 import { MdDelete } from "react-icons/md"
-import { URL } from "/home/xmalone0920/blogApp/frontend/url.js"
 import { useContext } from "react"
 import { UserContext } from "../context/UserContext"
+import { URL }  from "/home/xmalone0920/blogApp/frontend/src/url.js"
+
+
 
 const Comment = ({c,post}) => {
 
   const {user}=useContext(UserContext)
   const deleteComment=async(id)=>{
     try{
-      await axios.delete(URL+"/api/comments/"+id,{withCredentials:true})
+      await axios.delete("/api/comments/"+id,{withCredentials:true})
       window.location.reload(true)
     }
     catch(err){
